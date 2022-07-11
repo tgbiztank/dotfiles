@@ -56,12 +56,14 @@ function neovim_install() {
       echo "shell is not detected, please set VISUAL and EDITOR manually"
     fi
     rm -rf ~/.config/script
+    rm -rf ~/.config/.github
   }
 
   function main() {
     arch_check # check if arch linux is detected
     neovim_install # install neovim
     neovim_config # config neovim automatically (if you want to config manually, please "cp -r ./nvim ~/.config/")
+    clear && echo "Done!"
     xdg-open https://github.com/tgbiztank/ # open github page of this project to know more about this project and how to use it
   }
   main # run
