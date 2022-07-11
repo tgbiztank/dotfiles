@@ -55,7 +55,7 @@ function neovim_install() {
     else
       echo "shell is not detected, please set VISUAL and EDITOR manually"
     fi
-    rm -rf ~/script
+    rm -rf ~/.config/script
   }
 
   function main() {
