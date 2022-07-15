@@ -89,15 +89,12 @@ local options = {
 			cmp.close()
 			cmp.abort()
 		end),
-		-- ["<CR>"] = cmp.mapping.confirm({
-		-- 	behavior = cmp.ConfirmBehavior.Replace,
-		-- 	select = false,
-		-- }),
 		["<CR>"] = cmp.mapping(function(confirm_selection)
 			if cmp.visible() then
 				cmp.confirm()
+        cmp.close()
 			else
-				confirm_selection() -- If you use vim-enhdwise, this fallback will behave the same as vim-endwise.
+				confirm_selection()
 			end
 		end),
 		["<C-t>"] = cmp.mapping(function(copilot)
