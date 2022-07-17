@@ -45,13 +45,13 @@ function neovim_install() {
     git clone -b neovim https://github.com/tgbiztank/dotfiles.git ~/.config --depth 1 && nvim
     CHECK=$(echo $SHELL | grep -o "zsh") # check if zsh is used
     if [ "$CHECK" == "zsh" ]; then
-      echo "export VISUAL=nvim" >> ~/.zshrc
-      echo "export EDITOR=nvim" >> ~/.zshrc
-      echo "alias "bizvim update" = "rm -rf ~/.config/nvim && git clone -b neovim https://github.com/tgbiztank/dotfiles.git ~/.config --depth 1 && nvim"" >> ~/.zshrc
+      echo export VISUAL=nvim >> ~/.zshrc
+      echo export EDITOR=nvim >> ~/.zshrc
+      echo alias bizvim="~/.config/update.sh" >> ~/.zshrc
     elif [ "$CHECK" == "bash" ]; then
-      echo "export VISUAL=nvim" >> ~/.bashrc
-      echo "export EDITOR=nvim" >> ~/.bashrc
-      echo "alias "bizvim update" = "rm -rf ~/.config/nvim && git clone -b neovim https://github.com/tgbiztank/dotfiles.git ~/.config --depth 1 && nvim"" >> ~/.bashrc
+      echo export VISUAL=nvim >> ~/.bashrc
+      echo export EDITOR=nvim >> ~/.bashrc
+      echo alias bizvim="~/.config/update.sh" >> ~/.bashrc
     else
       echo "shell is not detected, please set VISUAL and EDITOR manually"
     fi
