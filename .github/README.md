@@ -8,7 +8,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/tgbiztank/dotfiles/neovim/
 ### 2.Update
 ###### Copy the following code to your terminal:
 ```
-bizvim update
+bizvim
 ```
 ### 3.Uninstall
 ###### Copy the following code to your terminal:
