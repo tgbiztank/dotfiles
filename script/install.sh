@@ -1,11 +1,11 @@
 #!/bin/bash
 #!/bin/sh
- #_        _     _     _              _
+#_        _     _     _              _
 #| |_ __ _| |__ (_)___| |_ __ _ _ __ | | __
 #| __/ _` | '_ \| |_  | __/ _` | '_ \| |/ /
 #| || (_| | |_) | |/ /| || (_| | | | |   <
- #\__\__, |_.__/|_/___|\__\__,_|_| |_|_|\_\
-    #|___/
+#\__\__, |_.__/|_/___|\__\__,_|_| |_|_|\_\
+#|___/
 
 function arch_check(){
   if [ -f /etc/arch-release ]; then
@@ -43,12 +43,12 @@ function neovim_install() {
     clear && echo "Maybe first time open nvim will get error, please ignore it"
     sleep 5 # wait user read the message
     git clone -b neovim https://github.com/tgbiztank/dotfiles.git ~/.config --depth 1 && nvim
-
-    if [ "$SHELL" == "/bin/zsh" ]; then
+    CHECK=$(echo $SHELL | grep -o "zsh") # check if zsh is used
+    if [ "$CHECK" == "zsh" ]; then
       echo "export VISUAL=nvim" >> ~/.zshrc
       echo "export EDITOR=nvim" >> ~/.zshrc
       echo "alias "bizvim update" = "rm -rf ~/.config/nvim && git clone -b neovim https://github.com/tgbiztank/dotfiles.git ~/.config --depth 1 && nvim"" >> ~/.zshrc
-    elif [ "$SHELL" == "/bin/bash" ]; then
+    elif [ "$CHECK" == "bash" ]; then
       echo "export VISUAL=nvim" >> ~/.bashrc
       echo "export EDITOR=nvim" >> ~/.bashrc
       echo "alias "bizvim update" = "rm -rf ~/.config/nvim && git clone -b neovim https://github.com/tgbiztank/dotfiles.git ~/.config --depth 1 && nvim"" >> ~/.bashrc
