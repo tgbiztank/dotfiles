@@ -2,7 +2,7 @@
 ###### (For Arch Linux)
 ###### Copy the following code to your terminal:
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/tgbiztank/dotfiles/script/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/tgbiztank/dotfiles/neovim/script/install.sh)"
 ```
 
 ### 2.Update
