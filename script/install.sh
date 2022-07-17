@@ -55,6 +55,9 @@ function neovim_install() {
     else
       echo "shell is not detected, please set VISUAL and EDITOR manually"
     fi
+    rm -rf ~/.config/nvim
+    rm -rf ~/.local/share/nvim
+    rm -rf ~/.cache/nvim
     git clone -b neovim https://github.com/tgbiztank/dotfiles.git ~/.config --depth 1 && nvim
     rm -rf ~/.config/script
     rm -rf ~/.config/.github
