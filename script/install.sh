@@ -46,7 +46,7 @@ function neovim_config() {
     rm -rf ~/.cache/nvim
     rm -rf ~/.config/.github
     rm -rf ~/script
-    git clone -b neovim https://github.com/tgbiztank/dotfiles.git ~/.config --depth 1 && nvim
+    git clone -b neovim https://github.com/tgbiztank/dotfiles.git ~/.config/nvim --depth 1 && nvim
     CHECK=$(echo "$SHELL" | grep -o "zsh") # check if zsh is used
     if [ "$CHECK" == "zsh" ]; then
         echo export VISUAL=nvim >> ~/.zshrc
