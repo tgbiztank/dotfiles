@@ -5,10 +5,10 @@
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/tgbiztank/dotfiles/neovim/script/install.sh)"
 ```
 
-### 2.Update
+### 2.Update(no longer working)
 ###### Copy the following code to your terminal:
 ```
-bizvim
+#bizvim
 ```
 ### 3.Uninstall
 ###### Copy the following code to your terminal:
