@@ -31,7 +31,7 @@ opt.termguicolors = true -- enable terminal colors
 opt.timeoutlen = 100 -- set timeout length to 100 milliseconds
 opt.title = true -- show title in status bar
 opt.undofile = true -- enable undo file support
-opt.updatetime = 250 -- set update time to 250 milliseconds
+opt.updatetime = 200 -- set update time to 250 milliseconds
 opt.whichwrap = "h,l,<,>,[,]" -- set cursor movement wrap around lines
 opt.writebackup = false -- disable write backup files to disk on exit
 -- disable auto comment on new line
@@ -44,8 +44,18 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir" },
 	callback = function()
 		vim.cmd([[
-      nnoremap <silent> <buffer> <ESC> :close<CR> 
-      set nobuflisted 
+      nnoremap <silent> <buffer> <ESC> :close<CR>
+      set nobuflisted
+    ]])
+	end,
+})
+-- auto delete trailing space
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+	pattern = "*",
+	callback = function()
+		vim.cmd([[
+      nnoremap <silent> <buffer> <F8> :%s/\s\+$//<CR>$
+      inoremap <silent> <buffer> <F8> <ESC>:%s/\s\+$//<CR>$a
     ]])
 	end,
 })
